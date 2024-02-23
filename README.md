@@ -9,8 +9,22 @@ You can deploy the Data3 Node Provider Service after its dependencies are deploy
 * PubSub Platform
 
 ### Prerequisites
+* MetaMask Wallet & Account with Test Kan Tokens (TTKAN) and Test Matic (reach out to us through our social media handles to get Test TTKAN Tokens)
+* Linux AMD host (the Observability Server requires this)
+* Public IP on the host with ability to expose ports 29092 (TCP), 8081 (HTTP) and 8443(HTTPS)
 * Docker
-* The Observability Server requires a Linux AMD host
+- Your Docker containers must be able to resolve these publicly available hostnames:
+- If you using an apt installation of docker
+```shell
+sudo dockerd --dns="8.8.8.8"
+sudo systemctl restart docker
+```
+or if you are using snap installation of docker
+```shell
+# Edit this file and add "dns":["8.8.8.8"] to the daemon.json
+sudo vi /var/snap/docker/current/config/daemon.json
+sudo systemctl restart snap.docker.dockerd
+```
 
 ### Observability Server
 This deploys the observability server:
@@ -30,7 +44,7 @@ Once deployed, the observability web application will be running on port 8443 (i
 This deploys the publish-subscribe platform:
 ```shell
 cd data3-node-provider/node-provider-pubsub
-# check configuration in docker-compose.yml
+# verify and edit configuration in docker-compose.yml
 docker compose up -d
 ```
 Once deployed, ensure that Kafka and Zookeeper docker containers are up successfully.
@@ -39,7 +53,7 @@ Once deployed, ensure that Kafka and Zookeeper docker containers are up successf
 Alternatively, you could deploy all the node provider dependencies in one go, using:
 ```shell
 cd data3-node-provider/node-provider-all-deps
-# check configuration in docker-compose.yml
+# verify and edit configuration in docker-compose.yml
 docker compose up -d
 ```
 
@@ -47,7 +61,7 @@ docker compose up -d
 Once the above dependencies are deployed and running successfully:
 ```shell
 cd data3-node-provider/node-provider
-# check configuration in docker-compose.yml
+# verify and edit configuration in docker-compose.yml
 docker compose up -d
 ```
 
@@ -60,7 +74,7 @@ The Data3 Storage Node is deployed once for every customer deployment.
 
 ```shell
 cd data3-storage-node
-# check configuration in docker-compose.yml
+# verify and edit configuration in docker-compose.yml
 docker compose up -d
 ```
 
