@@ -31,8 +31,8 @@ services:
       SELF_PUBSUB_HOST: 192.168.5.168
       SELF_PUBSUB_PORT: 29092
 
-      API_KEY: eNQRYk1CLDPZpUZFSq0kMQBsjqjIILLpvWioTCI9QUumcnmyZjioVQbzwbWxyQIC
-      API_SECRET: NOR6B1fgzEyV81j4y9Mtj1dNGRna4kFh
+      API_KEY: RT4xsi3IwYbJUQAllcS1jFKB8CJ80F5be1Fw1U92UdmQUXBmpwC90MxfeugdJUKE
+      API_SECRET: tgjJ7uLo6z3II22wbpMGSzasRxL1zBEv
       ADDRESS: 0xCd72bC4f5e464Ad4f659Bc62b1155c4183A89828
       PRIVATE_KEY: 20314b398d361035d67d28598f6a31189f88255c983ffc62f8a51ad2d99c35d7
 
@@ -52,8 +52,6 @@ services:
       - provider-network
     extra_hosts:
       - "host.docker.internal:host-gateway"
-      - "testconsoleapi.data3.network:host-gateway"
-      - "testpubsub.data3.network:host-gateway"
 volumes:
   provider-app-volume:
   provider-db-volume:
