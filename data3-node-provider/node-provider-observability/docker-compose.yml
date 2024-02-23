@@ -1,0 +1,16 @@
+version: '2.24.5'
+services:
+  observability-server:
+    image: percona/pmm-server:2
+    restart: always
+    expose:
+      - 443
+    ports:
+      - 8443:443
+    volumes:
+      - pmm-server-volume:/srv
+volumes:
+  pmm-server-volume:
+networks:
+  console-network:
+    driver: bridge

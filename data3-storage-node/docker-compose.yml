@@ -1,0 +1,38 @@
+version: '2.24.5'
+services:
+  data3-storage-node:
+    container_name: data3-storage-node-1
+    image: kandolanetwork/data3-storage-node:latest
+    environment:
+      GRAILS_ENV: development
+      OBSERVABILITY_SERVER_HOSTNAME: 192.168.5.168
+      OBSERVABILITY_SERVER_PORT: 8443
+      OBSERVABILITY_SERVER_USERNAME: admin
+      OBSERVABILITY_SERVER_PASSWORD: admin
+      DBPROXY_ADMIN_USERNAME: admin
+      DBPROXY_ADMIN_PASSWORD: admin
+
+      NODE_PROVIDER_BASE_URL: http://192.168.5.168:8080/
+      SELF_STORAGE_NODE_HOSTNAME: 192.168.5.168
+    volumes:
+      - data3-storage-node-volume:/app/data_home
+      - ./proxysql.cnf:/etc/proxysql.cnf
+    expose:
+      - 8080
+      - 6033
+      - 42000
+      - 42001
+    ports:
+      - "16033:6033"
+      - "38080:8080"
+      - "42000:42000"
+      - "42001:42001"
+    networks:
+      - data3-storage-node-network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+volumes:
+  data3-storage-node-volume:
+networks:
+  data3-storage-node-network:
+    driver: bridge
