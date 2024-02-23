@@ -14,13 +14,17 @@ You can deploy the Data3 Node Provider Service after its dependencies are deploy
 * Public IP on the host with ability to expose ports 29092 (TCP), 8081 (HTTP) and 8443(HTTPS)
 * Docker
 - Your Docker containers must be able to resolve these publicly available hostnames:
-- If you using an apt installation of docker
+    * testconsoleapi.data3.network (HTTPS/443)
+    * testpubsub.data3.network (TCP/9092)
+    * You can achieve this using one of the following methods (or similar):
 ```shell
+# If you using an apt installation of docker
 sudo dockerd --dns="8.8.8.8"
 sudo systemctl restart docker
 ```
-or if you are using snap installation of docker
+
 ```shell
+# or if you are using snap installation of docker
 # Edit this file and add "dns":["8.8.8.8"] to the daemon.json
 sudo vi /var/snap/docker/current/config/daemon.json
 sudo systemctl restart snap.docker.dockerd
