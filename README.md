@@ -8,6 +8,12 @@ You can deploy the Data3 Node Provider Service after its dependencies are deploy
 * Observability Server
 * PubSub Platform
 
+### Important Links:
+* Data3 Sandbox for TestNet Phase 1:
+  - Data3 Console UI: https://testconsole.data3.network/
+  - Data3 Bootstrap / Console API: https://testconsoleapi.data3.network/
+  - Data3 Bootstrap / Console PubSub Endpoint: testpubsub.data3.network (port 9092)
+
 ### Prerequisites
 * MetaMask Wallet & Account with Test Kan Tokens (TTKAN) and Test Matic (reach out to us through our social media handles to get Test TTKAN Tokens)
 * Linux AMD host (the Observability Server requires this)
