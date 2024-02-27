@@ -36,7 +36,7 @@ services:
       ADDRESS: 0xCd72bC4f5e464Ad4f659Bc62b1155c4183A89828
       PRIVATE_KEY: 20314b398d361035d67d28598f6a31189f88255c983ffc62f8a51ad2d99c35d7
 
-      EXTERNAL_API_ENDPOINT: https://192.168.5.168:9099/api/pricing
+      EXTERNAL_API_ENDPOINT: https://host.docker.internal:3080/price
     volumes:
       - provider-app-volume:/app/data_home
     expose:
