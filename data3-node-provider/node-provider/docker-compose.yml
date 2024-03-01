@@ -37,6 +37,7 @@ services:
       PRIVATE_KEY: 20314b398d361035d67d28598f6a31189f88255c983ffc62f8a51ad2d99c35d7
 
       EXTERNAL_API_ENDPOINT: https://host.docker.internal:3080/price
+      EXTERNAL_DEPLOYMENT_API_ENDPOINT: https://host.docker.internal:3080/deploy
     volumes:
       - provider-app-volume:/app/data_home
     expose:
