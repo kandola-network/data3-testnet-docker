@@ -1,7 +1,6 @@
 version: '2.24.5'
 services:
   data3-storage-node:
-    container_name: data3-storage-node-1
     image: kandolanetwork/data3-storage-node:latest
     environment:
       GRAILS_ENV: development
@@ -13,15 +12,15 @@ services:
       DBPROXY_ADMIN_USERNAME: admin
       DBPROXY_ADMIN_PASSWORD: admin
 
-      NODE_PROVIDER_BASE_URL: http://192.168.5.168:8080/
+      NODE_PROVIDER_BASE_URL: http://host.docker.internal:8081/
       SELF_STORAGE_NODE_HOSTNAME: 192.168.5.168
       SELF_STORAGE_NODE_PORT: 16033
 
-      DEPLOYMENT_ADDRESS: "AAADDD"
-      DEPLOYMENT_NAME: "Customer Deployment 1"
+      DEPLOYMENT_ADDRESS: "ee9430adc77a342212c5a2d2f0d96e363161d0465fe26b04f53848dc50b6e6fd"
+      DEPLOYMENT_NAME: "Test 17"
 
     volumes:
-      - data3-storage-node-volume:/app/data_home
+      - data3-storage-node-volume:/app
       - ./proxysql.cnf:/etc/proxysql.cnf
     expose:
       - 8080

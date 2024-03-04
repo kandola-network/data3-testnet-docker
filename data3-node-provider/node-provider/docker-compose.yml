@@ -31,15 +31,15 @@ services:
       SELF_PUBSUB_HOST: 192.168.5.168
       SELF_PUBSUB_PORT: 29092
 
-      API_KEY: RT4xsi3IwYbJUQAllcS1jFKB8CJ80F5be1Fw1U92UdmQUXBmpwC90MxfeugdJUKE
-      API_SECRET: tgjJ7uLo6z3II22wbpMGSzasRxL1zBEv
-      ADDRESS: "0xCd72bC4f5e464Ad4f659Bc62b1155c4183A89828"
-      PRIVATE_KEY: 20314b398d361035d67d28598f6a31189f88255c983ffc62f8a51ad2d99c35d7
+      API_KEY: 5gEOFnCHC0jZ40cxLtNFInr3qwqagndRhXO2jKeiccMgpLz5KZm8hBi3wDLKt74L
+      API_SECRET: s92aZv3U4nrGsbKCDx4AYRfcd6zA11YP
+      ADDRESS: "0x38A8F571244C7Cc96a6b44bBE0C08DF201CB2A92"
+      PRIVATE_KEY: cc1df7af5a061c80bcea961f80eef95fca8fe13a692d4631ccfed7008188c129
 
-      EXTERNAL_API_ENDPOINT: https://host.docker.internal:3080/price
-      EXTERNAL_DEPLOYMENT_API_ENDPOINT: https://host.docker.internal:3080/deploy
+      EXTERNAL_API_ENDPOINT: http://host.docker.internal:3080/price
+      EXTERNAL_DEPLOYMENT_API_ENDPOINT: http://host.docker.internal:3080/deploy
     volumes:
-      - provider-app-volume:/app/data_home
+      - provider-app-volume:/app
     expose:
       - 8080
     ports:
