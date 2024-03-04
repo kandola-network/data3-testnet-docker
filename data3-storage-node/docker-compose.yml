@@ -5,6 +5,7 @@ services:
     image: kandolanetwork/data3-storage-node:latest
     environment:
       GRAILS_ENV: development
+      DB_PROXY_CONFIG_FILE: /etc/proxysql.cnf
       OBSERVABILITY_SERVER_HOSTNAME: 192.168.5.168
       OBSERVABILITY_SERVER_PORT: 8443
       OBSERVABILITY_SERVER_USERNAME: admin
@@ -14,6 +15,11 @@ services:
 
       NODE_PROVIDER_BASE_URL: http://192.168.5.168:8080/
       SELF_STORAGE_NODE_HOSTNAME: 192.168.5.168
+      SELF_STORAGE_NODE_PORT: 16033
+
+      DEPLOYMENT_ADDRESS: "AAADDD"
+      DEPLOYMENT_NAME: "Customer Deployment 1"
+
     volumes:
       - data3-storage-node-volume:/app/data_home
       - ./proxysql.cnf:/etc/proxysql.cnf
