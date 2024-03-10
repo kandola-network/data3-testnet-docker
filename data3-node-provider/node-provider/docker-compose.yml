@@ -21,8 +21,8 @@ services:
       DB_HOST: provider-db
       DB_PORT: 27017
       DB_DATABASE: KandolaNodeProvider
-      BOOTSTRAP_BASE_URL: https://testconsoleapi.data3.network/
-      BOOTSTRAP_PUBSUB_HOST: testpubsub.data3.network
+      BOOTSTRAP_BASE_URL: https://api.testnet.data3.network/
+      BOOTSTRAP_PUBSUB_HOST: pubsub.testnet.data3.network
       BOOTSTRAP_PUBSUB_PORT: 9092
       P2P_PORT: 29092
 
